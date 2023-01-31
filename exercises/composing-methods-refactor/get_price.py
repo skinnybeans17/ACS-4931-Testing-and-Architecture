@@ -3,8 +3,8 @@
 # TODO: Replace temporary variable with extracted method/query
 
 # Code snippet. Not runnable.
-def get_price():
-    base_price = get_quantity() * get_item_price()
+def get_price(discount_factor, base_price):
+    base_price = discount_factor * base_price
 
     discount_factor = 0
     if base_price > 1000:
