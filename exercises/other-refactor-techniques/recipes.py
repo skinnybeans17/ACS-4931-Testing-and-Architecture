@@ -1,6 +1,17 @@
 # by Kami Bigdely
 # Extract Class
-foods = {'butternut squash soup':[45, True, 'soup','North African',\
+
+class Food:
+    def __init__(self, name, prep_time, is_veggie, food_type, cuisine, ingredients, recipe) -> None:
+        self.name = name
+        self.prep_tie = prep_time
+        self.is_veggie = is_veggie
+        self.food_type = food_type
+        self.cuisine = cuisine
+        self.ingredients = ingredients
+        self.recipe = recipe
+
+foods = {'butternut squash soup': [45, True, 'soup','North African',\
      ['butter squash','onion','carrot', 'garlic','butter','black pepper', 'cinnamon','coconut milk']\
         ,'1. Grill the butter squash, onion, carrot and garlic in the oven until'
           'they get soft and golden on top 2. Put all in blender with'
@@ -16,7 +27,7 @@ foods = {'butternut squash soup':[45, True, 'soup','North African',\
                 'seasoning 3. Add all the content to a sausage stuffer. Put the casing on'
                 "the stuffer funnel. Rotate the stuffer's handle (or turn it on) to make your yummy sausages!"]}
 
-for key, value in foods.items():
+def print_recipes():
     print("Name:",key)
     print("Prep time:",value[0], "mins")
     print("Is Veggie?", 'Yes' if value[1] else "No")
@@ -27,3 +38,6 @@ for key, value in foods.items():
     print()
     print("recipe", value[5])
     print("***")
+
+for key, value in foods.items():
+    print_recipes()
