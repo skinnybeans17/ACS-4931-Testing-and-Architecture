@@ -1,7 +1,7 @@
 import unittest
 import pytest
 import math
-from ..carbon_dating import get_age_carbon_14_dating
+from carbon_dating import get_age_carbon_14_dating
 
 # Write a unit test which feed 0.35 to the function.
 # The result should be '8680.34'. Does the function handles
@@ -10,3 +10,11 @@ from ..carbon_dating import get_age_carbon_14_dating
 # Add the necessary logic to make sure the function handle
 # every possible input properly. Then write a unit test againt
 # this special case.
+
+def test_get_age_carbon_14_dating():
+    ratio = .35
+    if ratio <= 0:
+        assert False
+    if type(ratio) != 'int' or type(ratio) != 'float':
+        assert False
+    assert math.isclose(get_age_carbon_14_dating(ratio), 8680.34, abs_tol=0.01)
